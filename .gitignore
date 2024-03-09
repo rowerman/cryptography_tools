@@ -1,0 +1,11 @@
+.idea/
+
+.venv/
+
+__pychche__/
+
+enc/
+
+output/
+
+pictures/
