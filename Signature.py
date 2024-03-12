@@ -1,4 +1,4 @@
-from cryptography.hazmat.primitives import hashes, cmac, hmac, poly1305
+from cryptography.hazmat.primitives import hashes, cmac, hmac, poly1305, serialization
 from cryptography.hazmat.primitives.asymmetric import ed448
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
@@ -14,8 +14,28 @@ def Ed448_Sig(message):
     
     return base64.b64encode(signature).decode(), public_key, private_key
 
+def Ed448_Verify(message, signature, public_pem):
+    try:
+        signature = base64.b64decode(signature.encode())
+
+        messageToEnc = message.encode()
+        public_pem = public_pem.encode()
+        
+        public_key = serialization.load_pem_public_key(public_pem, default_backend())
+
+        # Verify the signature
+        public_key.verify(signature, messageToEnc)
+        # If the verification is successful, return True
+        return True
+    except:
+        # If the verification fails, return False
+        return False
+
+
+
 # 消息认证码
 def CMAC_en(message, len_key):
+    len_key = int(len_key)
     if len_key not in [128, 192, 256]:
         raise ValueError("Invalid key size. Key size must be 128, 192, or 256.")
     key = generate_key(len_key)
@@ -29,14 +49,15 @@ def CMAC_en(message, len_key):
     return base64.b64encode(tag).decode(), key
 
 def CMAC_de(message, key, tag):
+    key = key.encode()
     c = cmac.CMAC(algorithms.AES(key))
     c.update(message.encode())
     
     try:
         c.verify(base64.b64decode(tag.encode()))
-        return "The tag is correct~"
+        return True
     except:
-        return "The tag is incorrect!"
+        return False
     
 """ message = "Hello, world! I 'm Ed448."
 MacGenerated, key = CMAC_en(message, 256)
@@ -54,14 +75,15 @@ def HMAC_en(message):
     return base64.b64encode(tag).decode(), key
 
 def HMAC_de(message, key, tag):
+    key = key.encode()
     h = hmac.HMAC(key, hashes.SHA256())
     h.update(message.encode())
     
     try:
         h.verify(base64.b64decode(tag.encode()))
-        return "The HmacTag is correct~"
+        return True
     except:
-        return "The HmacTag is incorrect!"
+        return False
     
 """ message = "Hello, world! I 'm Ed448."
 MacGenerated, key = HMAC_en(message)

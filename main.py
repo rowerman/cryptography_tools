@@ -2,10 +2,11 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from PyQt5.QtCore import QTimer,QDateTime
 import sys, time, base64
 
+from cryptography.hazmat.primitives import serialization
 from pyqt5_plugins.examplebuttonplugin import QtGui
 
 from GUI import Gui
-import SymEnc
+import SymEnc, AsyEnc, Signature
 
 class MyMainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -34,6 +35,27 @@ class MyMainWindow(QMainWindow):
         self.ui.pushButton_4.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(3))
         self.ui.pushButton_39.clicked.connect(lambda : self.ui.stackedWidget_5.setCurrentIndex(0))
         self.ui.pushButton_40.clicked.connect(lambda: self.ui.stackedWidget_5.setCurrentIndex(1))
+        # RSA
+        self.ui.pushButton_5.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(4))
+        self.ui.pushButton_45.clicked.connect(lambda: self.ui.stackedWidget_6.setCurrentIndex(0))
+        self.ui.pushButton_46.clicked.connect(lambda: self.ui.stackedWidget_6.setCurrentIndex(1))
+        self.ui.pushButton_35.clicked.connect(lambda: self.ui.stackedWidget_6.setCurrentIndex(2))
+        # Ed25519
+        self.ui.pushButton_6.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(5))
+        # Ed448
+        self.ui.pushButton_7.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(6))
+        # Ed448签名
+        self.ui.pushButton_8.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(7))
+        self.ui.pushButton_54.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentIndex(0))
+        self.ui.pushButton_53.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentIndex(1))
+        # CMAC
+        self.ui.pushButton_9.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(8))
+        self.ui.pushButton_60.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentIndex(1))
+        self.ui.pushButton_61.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentIndex(0))
+        # HMAC
+        self.ui.pushButton_10.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(9))
+        self.ui.pushButton_67.clicked.connect(lambda: self.ui.stackedWidget_9.setCurrentIndex(1))
+        self.ui.pushButton_68.clicked.connect(lambda: self.ui.stackedWidget_9.setCurrentIndex(0))
         
         
         # 勾选复选框后显示对应内容
@@ -89,6 +111,60 @@ class MyMainWindow(QMainWindow):
         self.ui.lineEdit_14.setReadOnly(True)
         self.ui.checkBox_16.clicked.connect(
             lambda: self.show_fileDialog(self.ui.pushButton_48, self.ui.plainTextEdit_21, self.ui.lineEdit_14))
+        # RSA
+        self.ui.pushButton_49.setEnabled(False)
+        self.ui.lineEdit_13.setReadOnly(True)
+        self.ui.checkBox_14.clicked.connect(
+            lambda : self.show_fileDialog(self.ui.pushButton_49, self.ui.plainTextEdit_19,self.ui.lineEdit_13))
+        
+        self.ui.pushButton_51.setEnabled(False)
+        self.ui.lineEdit_15.setReadOnly(True)
+        self.ui.checkBox_18.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_51, self.ui.plainTextEdit_23, self.ui.lineEdit_15))
+        # Ed448签名
+        self.ui.pushButton_57.setEnabled(False)
+        self.ui.lineEdit_17.setReadOnly(True)
+        self.ui.checkBox_21.clicked.connect(
+            lambda : self.show_fileDialog(self.ui.pushButton_57, self.ui.plainTextEdit_26,self.ui.lineEdit_17))
+        
+        self.ui.pushButton_55.setEnabled(False)
+        self.ui.pushButton_59.setEnabled(False)
+        self.ui.lineEdit_8.setReadOnly(True)
+        self.ui.lineEdit_16.setReadOnly(True)
+        self.ui.checkBox_19.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_55, self.ui.plainTextEdit_20, self.ui.lineEdit_16))
+        self.ui.checkBox_3.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_59, self.ui.plainTextEdit_3, self.ui.lineEdit_8))
+        # CMAC
+        self.ui.pushButton_66.setEnabled(False)
+        self.ui.lineEdit_20.setReadOnly(True)
+        self.ui.checkBox_22.clicked.connect(
+            lambda : self.show_fileDialog(self.ui.pushButton_66, self.ui.plainTextEdit_29,self.ui.lineEdit_20))
+        
+        self.ui.pushButton_64.setEnabled(False)
+        self.ui.pushButton_62.setEnabled(False)
+        self.ui.lineEdit_19.setReadOnly(True)
+        self.ui.lineEdit_11.setReadOnly(True)
+        self.ui.checkBox_20.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_64, self.ui.plainTextEdit_28, self.ui.lineEdit_19))
+        self.ui.checkBox_4.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_62, self.ui.plainTextEdit_4, self.ui.lineEdit_11))
+        
+        #HMAC
+        self.ui.pushButton_72.setEnabled(False)
+        self.ui.lineEdit_24.setReadOnly(True)
+        self.ui.checkBox_24.clicked.connect(
+            lambda : self.show_fileDialog(self.ui.pushButton_72, self.ui.plainTextEdit_32,self.ui.lineEdit_24))
+        
+        self.ui.pushButton_71.setEnabled(False)
+        self.ui.pushButton_69.setEnabled(False)
+        self.ui.lineEdit_23.setReadOnly(True)
+        self.ui.lineEdit_21.setReadOnly(True)
+        self.ui.checkBox_23.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_71, self.ui.plainTextEdit_31, self.ui.lineEdit_23))
+        self.ui.checkBox_10.clicked.connect(
+            lambda: self.show_fileDialog(self.ui.pushButton_69, self.ui.plainTextEdit_13, self.ui.lineEdit_21))
+          
         
         
         # 点击选择文件后，就选择文件...
@@ -104,6 +180,21 @@ class MyMainWindow(QMainWindow):
         # SM4
         self.ui.pushButton_41.clicked.connect(lambda : self.browse_file(self.ui.lineEdit_12))
         self.ui.pushButton_48.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_14))
+        # RSA
+        self.ui.pushButton_49.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_13))
+        self.ui.pushButton_51.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_15))
+        # Ed448签名
+        self.ui.pushButton_57.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_17))
+        self.ui.pushButton_55.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_16))
+        self.ui.pushButton_59.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_8))
+        # CMAC
+        self.ui.pushButton_66.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_20))
+        self.ui.pushButton_64.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_19))
+        self.ui.pushButton_62.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_11))
+        # HMAC
+        self.ui.pushButton_72.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_24))
+        self.ui.pushButton_71.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_23))
+        self.ui.pushButton_69.clicked.connect(lambda: self.browse_file(self.ui.lineEdit_21))
         
         # 点击加密按钮后，就加密...
         # AES
@@ -139,8 +230,33 @@ class MyMainWindow(QMainWindow):
         self.ui.pushButton_47.clicked.connect(lambda: self.SM4_decrypt(self.ui.lineEdit_14, self.ui.plainTextEdit_21,
                                                                             self.ui.plainTextEdit_22,
                                                                             self.ui.checkBox_16,self.ui.checkBox_16))
-        
-        
+        # RSA
+        self.ui.pushButton_50.clicked.connect(lambda: self.RSA_encrypt(self.ui.lineEdit_13, self.ui.plainTextEdit_19,
+                                                                       self.ui.checkBox_14,self.ui.comboBox_2))
+        self.ui.pushButton_52.clicked.connect(lambda: self.RSA_decrypt(self.ui.lineEdit_15, self.ui.plainTextEdit_23,
+                                                                       self.ui.plainTextEdit_24,self.ui.checkBox_18))
+        self.ui.pushButton_36.clicked.connect(lambda: self.Gen_RSA_key(self.ui.comboBox_7))
+        # Ed25519
+        self.ui.pushButton_37.clicked.connect(lambda: self.Ed25519_generate())
+        # Ed448
+        self.ui.pushButton_38.clicked.connect(lambda: self.Ed448_generate())
+        # Ed448签名
+        self.ui.pushButton_58.clicked.connect(lambda: self.Ed448_sig(self.ui.lineEdit_17,self.ui.plainTextEdit_26,self.ui.checkBox_21))
+        self.ui.pushButton_56.clicked.connect(lambda: self.Ed448_verify(self.ui.lineEdit_16,self.ui.lineEdit_8,
+                                                                     self.ui.plainTextEdit_20,self.ui.plainTextEdit_3,self.ui.plainTextEdit_25,
+                                                                     self.ui.checkBox_19,self.ui.checkBox_3))
+        # CMAC
+        self.ui.pushButton_65.clicked.connect(lambda: self.CMAC_en(self.ui.lineEdit_20,self.ui.plainTextEdit_29,
+                                                                   self.ui.checkBox_22,self.ui.comboBox_6))
+        self.ui.pushButton_63.clicked.connect(lambda: self.CMAC_de(self.ui.lineEdit_19,self.ui.lineEdit_11,
+                                                                     self.ui.plainTextEdit_28,self.ui.plainTextEdit_4,self.ui.plainTextEdit_27,
+                                                                     self.ui.checkBox_20,self.ui.checkBox_4))
+        # HMAC
+        self.ui.pushButton_73.clicked.connect(lambda: self.HMAC_en(self.ui.lineEdit_24,self.ui.plainTextEdit_32,
+                                                                   self.ui.checkBox_24))
+        self.ui.pushButton_70.clicked.connect(lambda: self.HMAC_de(self.ui.lineEdit_23,self.ui.lineEdit_21,
+                                                                     self.ui.plainTextEdit_31,self.ui.plainTextEdit_13,self.ui.plainTextEdit_30,
+                                                                     self.ui.checkBox_23,self.ui.checkBox_10))
     def showtime(self,StartTime):
         datetime = QDateTime.currentDateTime()
         workingTime = StartTime.secsTo(datetime)
@@ -478,6 +594,327 @@ class MyMainWindow(QMainWindow):
         DeEncrypted_content = SymEnc.SM4_decrypt(message, key)
         self.ui.textEdit_3.setText(DeEncrypted_content)
 
+    def RSA_encrypt(self,LineEdit,PlainTextEdit,CheckBox,ComboBox):
+        # def RSA_encrypt(message, len_secret_key):
+        if CheckBox.isChecked() and LineEdit.text() == "":
+            QMessageBox.information(self, '提示', '你需要选择文件！')
+            return
+        elif not CheckBox.isChecked() and PlainTextEdit.toPlainText() == "":
+            QMessageBox.information(self, "提示", "你需要输入内容！")
+            return
+        
+        if CheckBox.isChecked():
+            filepath = LineEdit.text()
+            try:
+                file = open(filepath,'r')
+                message = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            message = PlainTextEdit.toPlainText()
+        len_key = ComboBox.currentText()
+        Encrypted_content, public_key, private_key = AsyEnc.RSA_encrypt(message, len_key)
+        # 将公私钥转化为PEM格式
+        private_pem = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        public_pem = public_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+        self.ui.textEdit_11.setText(Encrypted_content)
+        self.ui.textEdit_12.setText(public_pem.decode())
+        self.ui.textEdit_14.setText(private_pem.decode())
+        
+    def RSA_decrypt(self,LineEdit,PlainTextEdit1,PlainTextEdit2,CheckBox):
+        if CheckBox.isChecked() and LineEdit.text() == "":
+            QMessageBox.information(self, '提示', '你需要选择文件！')
+            return
+        elif not CheckBox.isChecked() and PlainTextEdit1.toPlainText() == "" or PlainTextEdit2.toPlainText() == "":
+            QMessageBox.information(self, "提示", "你需要输入内容！")
+            return
+        
+        if CheckBox.isChecked():
+            filepath = LineEdit.text()
+            try:
+                file = open(filepath, "r")
+                message = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            message = PlainTextEdit1.toPlainText()
+            
+        private_key = PlainTextEdit2.toPlainText()
+        Decrypted_data = AsyEnc.RSA_decrypt(message, private_key)
+        self.ui.textEdit_13.setText(Decrypted_data)
+        
+    def Gen_RSA_key(self,ComboBox):
+        len_key = ComboBox.currentText()
+        public_key, private_key = AsyEnc.generate_RSA_keys(int(len_key))
+        private_pem = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        public_pem = public_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+        self.ui.textEdit_15.setText(public_pem.decode())
+        self.ui.textEdit_16.setText(private_pem.decode())
+        
+    def Ed25519_generate(self):
+        pub_key, pri_key = AsyEnc.generate_Ed25519_keys()
+        # Convert the private key to PEM format
+        pem_private_key = pri_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        
+        # Convert the public key to PEM format
+        pem_public_key = pub_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+        self.ui.textEdit_17.setText(pem_public_key.decode())
+        self.ui.textEdit_18.setText(pem_private_key.decode())
+        
+
+    def Ed448_generate(self):
+        pub_key, pri_key  = AsyEnc.generate_Ed448_keys()
+        pem_private_key = pri_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        
+        # Convert the public key to PEM format
+        pem_public_key = pub_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+        self.ui.textEdit_19.setText(pem_public_key.decode())
+        self.ui.textEdit_20.setText(pem_private_key.decode())
+        
+    def Ed448_sig(self,LineEdit,PlainTextEdit,CheckBox):
+        if CheckBox.isChecked() and LineEdit.text() == "":
+            QMessageBox.information(self, '提示', '你需要选择文件！')
+            return
+        elif not CheckBox.isChecked() and PlainTextEdit.toPlainText() == "":
+            QMessageBox.information(self, "提示", "你需要输入内容！")
+            return
+        if CheckBox.isChecked():
+            filepath = LineEdit.text()
+            try:
+                file = open(filepath,'r')
+                message = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            message = PlainTextEdit.toPlainText()
+            
+        signature, public_key, private_key = Signature.Ed448_Sig(message)
+        pem_private_key = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        
+        # Convert the public key to PEM format
+        pem_public_key = public_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+        self.ui.textEdit_23.setText(signature)
+        self.ui.textEdit_24.setText(pem_public_key.decode())
+        self.ui.textEdit_25.setText(pem_private_key.decode())
+        
+    def Ed448_verify(self,LineEdit1, LineEdit2,PlainTextEdit1,PlainTextEdit2,PlainTextEdit3,CheckBox1,CheckBox2):
+        if CheckBox1.isChecked() and LineEdit1.text() == "" or CheckBox2.isChecked() and LineEdit2.text() == "":
+            QMessageBox.information(self, "提示", "请输入文件路径!")
+            return
+        if not CheckBox1.isChecked() and PlainTextEdit1.toPlainText() == "" or not CheckBox2.isChecked() and PlainTextEdit2.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入签名或公钥!")
+            return
+        if PlainTextEdit3.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入公钥!")
+            return
+        
+        if CheckBox1.isChecked():
+            filepath = LineEdit1.text()
+            try:
+                file = open(filepath,'r')
+                Sig = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            Sig = PlainTextEdit1.toPlainText()
+            
+        if CheckBox2.isChecked():
+            filepath = LineEdit2.text()
+            try:
+                file = open(filepath,'r')
+                origin_msg = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            origin_msg = PlainTextEdit2.toPlainText()
+            
+        public_key = PlainTextEdit3.toPlainText()
+        
+        result = Signature.Ed448_Verify(origin_msg,Sig,public_key)
+        if result:
+            self.ui.lineEdit_7.setText("验证成功！")
+        else:
+            self.ui.lineEdit_7.setText("验证失败！")
+        
+    def CMAC_en(self,LineEdit,PlainTextEdit,CheckBox,ComboBox):
+        if CheckBox.isChecked() and LineEdit.text() == "":
+            QMessageBox.information(self, '提示', '你需要选择文件！')
+            return
+        elif not CheckBox.isChecked() and PlainTextEdit.toPlainText() == "":
+            QMessageBox.information(self, "提示", "你需要输入内容！")
+            return
+        if CheckBox.isChecked():
+            filepath = LineEdit.text()
+            try:
+                file = open(filepath,'r')
+                message = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            message = PlainTextEdit.toPlainText()
+            
+        len_key = ComboBox.currentText()
+        MAC, key = Signature.CMAC_en(message,len_key)
+        self.ui.textEdit_27.setText(MAC)
+        self.ui.textEdit_26.setText(key.decode())
+        
+    def CMAC_de(self,LineEdit1, LineEdit2,PlainTextEdit1,PlainTextEdit2,PlainTextEdit3,CheckBox1,CheckBox2):
+        if CheckBox1.isChecked() and LineEdit1.text() == "" or CheckBox2.isChecked() and LineEdit2.text() == "":
+            QMessageBox.information(self, "提示", "请输入文件路径!")
+            return
+        if not CheckBox1.isChecked() and PlainTextEdit1.toPlainText() == "" or not CheckBox2.isChecked() and PlainTextEdit2.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入签名或公钥!")
+            return
+        if PlainTextEdit3.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入公钥!")
+            return
+        
+        if CheckBox1.isChecked():
+            filepath = LineEdit1.text()
+            try:
+                file = open(filepath, 'r')
+                Sig = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            Sig = PlainTextEdit1.toPlainText()
+        
+        if CheckBox2.isChecked():
+            filepath = LineEdit2.text()
+            try:
+                file = open(filepath, 'r')
+                origin_msg = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            origin_msg = PlainTextEdit2.toPlainText()
+        
+        public_key = PlainTextEdit3.toPlainText()
+        
+        result = Signature.CMAC_de(origin_msg, public_key, Sig)
+        if result:
+            self.ui.lineEdit_18.setText("验证成功！")
+        else:
+            self.ui.lineEdit_18.setText("验证失败！")
+        
+    def HMAC_en(self,LineEdit,PlainTextEdit,CheckBox):
+        if CheckBox.isChecked() and LineEdit.text() == "":
+            QMessageBox.information(self, '提示', '你需要选择文件！')
+            return
+        elif not CheckBox.isChecked() and PlainTextEdit.toPlainText() == "":
+            QMessageBox.information(self, "提示", "你需要输入内容！")
+            return
+        if CheckBox.isChecked():
+            filepath = LineEdit.text()
+            try:
+                file = open(filepath, 'r')
+                message = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            message = PlainTextEdit.toPlainText()
+        
+        MAC, key = Signature.HMAC_en(message)
+        self.ui.textEdit_28.setText(MAC)
+        self.ui.textEdit_29.setText(key.decode())
+        
+    def HMAC_de(self,LineEdit1, LineEdit2,PlainTextEdit1,PlainTextEdit2,PlainTextEdit3,CheckBox1,CheckBox2):
+        if CheckBox1.isChecked() and LineEdit1.text() == "" or CheckBox2.isChecked() and LineEdit2.text() == "":
+            QMessageBox.information(self, "提示", "请输入文件路径!")
+            return
+        if not CheckBox1.isChecked() and PlainTextEdit1.toPlainText() == "" or not CheckBox2.isChecked() and PlainTextEdit2.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入签名或公钥!")
+            return
+        if PlainTextEdit3.toPlainText() == "":
+            QMessageBox.information(self, "提示", "请输入公钥!")
+            return
+        
+        if CheckBox1.isChecked():
+            filepath = LineEdit1.text()
+            try:
+                file = open(filepath, 'r')
+                Sig = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            Sig = PlainTextEdit1.toPlainText()
+        
+        if CheckBox2.isChecked():
+            filepath = LineEdit2.text()
+            try:
+                file = open(filepath, 'r')
+                origin_msg = file.read()
+                file.close()
+            except:
+                QMessageBox.information(self, "提示", "文件路径错误！")
+                return
+        else:
+            origin_msg = PlainTextEdit2.toPlainText()
+        
+        public_key = PlainTextEdit3.toPlainText()
+        
+        result = Signature.HMAC_de(origin_msg, public_key, Sig)
+        if result:
+            self.ui.lineEdit_22.setText("验证成功！")
+        else:
+            self.ui.lineEdit_22.setText("验证失败！")
+        
+    
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # 创建应用程序对象
     MainWindow = MyMainWindow()  # 创建主窗口
