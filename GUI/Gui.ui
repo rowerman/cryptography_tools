@@ -101,7 +101,7 @@
      <enum>QFrame::Box</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <property name="geometry">
@@ -279,7 +279,7 @@
        <item>
         <widget class="QPushButton" name="pushButton_12">
          <property name="text">
-          <string>SHA2&amp;SHA3</string>
+          <string>SHA2/SHA3</string>
          </property>
         </widget>
        </item>
@@ -383,9 +383,9 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>50</y>
-      <width>791</width>
-      <height>701</height>
+      <y>20</y>
+      <width>861</width>
+      <height>791</height>
      </rect>
     </property>
     <property name="font">
@@ -398,7 +398,7 @@
      <enum>QFrame::Box</enum>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>13</number>
     </property>
     <widget class="QWidget" name="page_6">
      <widget class="QStackedWidget" name="stackedWidget_2">
@@ -406,15 +406,15 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_8">
        <widget class="QWidget" name="gridLayoutWidget">
@@ -422,8 +422,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -811,15 +811,15 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_10">
        <widget class="QWidget" name="gridLayoutWidget_2">
@@ -827,8 +827,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -1226,15 +1226,15 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_14">
        <widget class="QWidget" name="gridLayoutWidget_5">
@@ -1242,8 +1242,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_6">
@@ -1658,8 +1658,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="font">
@@ -1672,7 +1672,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_16">
        <widget class="QWidget" name="gridLayoutWidget_6">
@@ -1680,8 +1680,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
@@ -2183,8 +2183,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="font">
@@ -2197,7 +2197,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_19">
        <widget class="QWidget" name="gridLayoutWidget_9">
@@ -2655,8 +2655,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -2767,8 +2767,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
@@ -2874,8 +2874,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_13">
@@ -3010,8 +3010,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="font">
@@ -3024,7 +3024,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_25">
        <widget class="QWidget" name="gridLayoutWidget_14">
@@ -3247,8 +3247,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <property name="font">
@@ -3522,8 +3522,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="font">
@@ -3536,7 +3536,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_28">
        <widget class="QWidget" name="gridLayoutWidget_16">
@@ -3578,7 +3578,7 @@
             </size>
            </property>
            <property name="text">
-            <string>456</string>
+            <string>取决于密钥</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -3759,8 +3759,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <property name="font">
@@ -4018,8 +4018,8 @@
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>791</width>
-        <height>641</height>
+        <width>861</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="font">
@@ -4032,7 +4032,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_31">
        <widget class="QWidget" name="gridLayoutWidget_18">
@@ -4074,7 +4074,7 @@
             </size>
            </property>
            <property name="text">
-            <string>456</string>
+            <string>256</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -4255,8 +4255,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>791</width>
-          <height>641</height>
+          <width>861</width>
+          <height>731</height>
          </rect>
         </property>
         <property name="font">
@@ -4429,12 +4429,1259 @@
          <item row="4" column="2" colspan="2">
           <widget class="QLabel" name="label_101">
            <property name="text">
-            <string>固定为128bit</string>
+            <string>固定为256bit</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_33">
+     <widget class="QLabel" name="label_102">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>UpArrowCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>poly1305</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>0</y>
+        <width>361</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <property name="spacing">
+        <number>40</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="pushButton_74">
+         <property name="text">
+          <string>生成消息验证码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_75">
+         <property name="text">
+          <string>验证消息</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>861</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_34">
+       <widget class="QWidget" name="gridLayoutWidget_20">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>861</width>
+          <height>731</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_20">
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="lineEdit_25">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1" colspan="3">
+          <widget class="QPlainTextEdit" name="plainTextEdit_33">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="3">
+          <widget class="QLabel" name="label_103">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>256</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" rowspan="2">
+          <widget class="QCheckBox" name="checkBox_25">
+           <property name="text">
+            <string>读取文件</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QPushButton" name="pushButton_76">
+           <property name="text">
+            <string>选择文件</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0" colspan="4">
+          <widget class="QPushButton" name="pushButton_77">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>验证</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_104">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>密钥长度</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="label_105">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>结果</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1" colspan="3">
+          <widget class="QLineEdit" name="lineEdit_26"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_106">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>所需密钥</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushButton_78">
+           <property name="text">
+            <string>选择文件</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" rowspan="2">
+          <widget class="QLabel" name="label_107">
+           <property name="text">
+            <string>原始信息</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="lineEdit_27">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3" rowspan="2">
+          <widget class="QPlainTextEdit" name="plainTextEdit_34">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3" rowspan="2">
+          <widget class="QPlainTextEdit" name="plainTextEdit_14"/>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QCheckBox" name="checkBox_26">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>读取文件</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="2">
+          <widget class="QLabel" name="label_108">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>消息验证码</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_35">
+       <widget class="QWidget" name="gridLayoutWidget_21">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>791</width>
+          <height>641</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_21">
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_109">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>密钥长度</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="3">
+          <widget class="QTextEdit" name="textEdit_30">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" rowspan="3">
+          <widget class="QCheckBox" name="checkBox_27">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>读取文件</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_110">
+           <property name="text">
+            <string>密钥</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushButton_79">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>选择文件</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" rowspan="3">
+          <widget class="QLabel" name="label_111">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>明文</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_112">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>验证码</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="4">
+          <widget class="QPushButton" name="pushButton_80">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>生成消息验证码！</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1" colspan="3">
+          <widget class="QTextEdit" name="textEdit_31"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="lineEdit_28">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3" rowspan="2">
+          <widget class="QPlainTextEdit" name="plainTextEdit_35">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>300</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2" colspan="2">
+          <widget class="QLabel" name="label_113">
+           <property name="text">
+            <string>固定为256bit</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_36">
+     <widget class="QLabel" name="label_114">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>0</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>UpArrowCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>SHA2/SHA3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_24">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>861</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_26">
+       <item row="1" column="3" rowspan="2">
+        <widget class="QPlainTextEdit" name="plainTextEdit_43">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_132">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>选择算法</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_135">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>得到的HASH</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="3">
+        <widget class="QTextEdit" name="textEdit_34">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="pushButton_89">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>选择文件</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="lineEdit_36">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="4">
+        <widget class="QPushButton" name="pushButton_90">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>生成HASH!</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2">
+        <widget class="QComboBox" name="comboBox_8">
+         <item>
+          <property name="text">
+           <string>SHA-224</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA-256</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA-384</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA-512</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA3-224</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA3-256</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA3-384</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHA3-512</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="1" rowspan="3">
+        <widget class="QCheckBox" name="checkBox_33">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>读取文件</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="3">
+        <widget class="QLabel" name="label_134">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>明文</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_39">
+     <widget class="QLabel" name="label_133">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>0</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>UpArrowCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>Shake</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_25">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>861</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_27">
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_137">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>得到的HASH</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2">
+        <widget class="QComboBox" name="comboBox_9">
+         <item>
+          <property name="text">
+           <string>SHAKE128</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SHAKE256</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="3">
+        <widget class="QTextEdit" name="textEdit_35">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="4">
+        <widget class="QPushButton" name="pushButton_92">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>生成HASH!</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_136">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>选择算法</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3" rowspan="2">
+        <widget class="QPlainTextEdit" name="plainTextEdit_44">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="pushButton_91">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>选择文件</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="lineEdit_37">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="3">
+        <widget class="QLabel" name="label_138">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>明文</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" rowspan="3">
+        <widget class="QCheckBox" name="checkBox_34">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>读取文件</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_139">
+         <property name="text">
+          <string>生成hash的位数</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2" colspan="2">
+        <widget class="QLineEdit" name="lineEdit_38"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_40">
+     <widget class="QWidget" name="horizontalLayoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>0</y>
+        <width>361</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <property name="spacing">
+        <number>40</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="pushButton_93">
+         <property name="text">
+          <string>嵌入文字</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_94">
+         <property name="text">
+          <string>提取文字</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>90</y>
+        <width>861</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="page_41">
+       <widget class="QWidget" name="gridLayoutWidget_26">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>861</width>
+          <height>701</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_29">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_148">
+           <property name="maximumSize">
+            <size>
+             <width>391</width>
+             <height>243</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>我是图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_146">
+           <property name="maximumSize">
+            <size>
+             <width>391</width>
+             <height>243</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>我是图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="2">
+          <widget class="QPushButton" name="pushButton_100">
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>一键嵌入！</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="lineEdit_42"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pushButton_98">
+           <property name="text">
+            <string>选择图片</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_41"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButton_99">
+           <property name="text">
+            <string>存储图片</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_149">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>待嵌入文字的图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_151">
+           <property name="text">
+            <string>嵌入文字的长度（单位为bit，嵌入时无需输入）</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_147">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>嵌入文字后的图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_145">
+           <property name="text">
+            <string>待嵌入的文字</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QTextEdit" name="textEdit_22">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="lineEdit_45"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_42">
+       <widget class="QWidget" name="gridLayoutWidget_27">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>791</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_30">
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pushButton_101">
+           <property name="text">
+            <string>选择图片</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_150">
+           <property name="text">
+            <string>提取出文字的长度（单位为bit，需要填写）</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButton_102">
+           <property name="text">
+            <string>将提取的结果存到哪？</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_43"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="lineEdit_44"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_153">
+           <property name="text">
+            <string>我是图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_154">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>待提取文字的图片</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QPushButton" name="pushButton_103">
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>一键提取！</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_152">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>提取出的文字</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QTextEdit" name="textEdit_37"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit_46"/>
          </item>
         </layout>
        </widget>

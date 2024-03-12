@@ -1,8 +1,13 @@
 from blind_watermark import WaterMark
 from datetime import datetime
 from PIL import Image
+from utils import convert_slashes
 
-def embed_text(image_path, text):
+def embed_text(image_path, text, output_path):
+    image_path = convert_slashes(image_path)
+    print("image_path:",image_path)
+    output_path = convert_slashes(output_path)
+    # print("output_path:",output_path)
     # 初始化嵌入器
     bwm1 = WaterMark(password_img=1, password_wm=1)
     # 获取待嵌入水印图片路径
@@ -15,7 +20,8 @@ def embed_text(image_path, text):
     now = datetime.now()
     time_string = now.strftime("%Y%m%d_%H%M%S_")
     len_wm = len(bwm1.wm_bit)
-    output_path = './output/embed_text/' + time_string + str(len_wm) + "_embedded.png"
+    output_path = output_path + '/' + time_string + str(len_wm) + "_embedded.png"
+    print("output_path:",output_path)
     # output_path = './output/embedded.png'
     bwm1.embed(output_path)
     
@@ -23,16 +29,24 @@ def embed_text(image_path, text):
     print('Put down the length of wm_bit {len_wm}'.format(len_wm=len_wm))
     return len_wm, output_path
     
-def get_text(image_path,len_wm):
+def get_text(image_path,len_wm,output_path):
     bwm1 = WaterMark(password_img=1, password_wm=1)
-    wm_extract = bwm1.extract(image_path, wm_shape=len_wm, mode='str')
-    print(wm_extract)
+    wm_extract = bwm1.extract(image_path, wm_shape=int(len_wm), mode='str')
+    
+    now = datetime.now()
+    time_string = now.strftime("%Y%m%d_%H%M%S_")
+    output_path = output_path + '/' + time_string + len_wm + "_extracted.txt"
+    with open(output_path, 'w') as f:
+        f.write(wm_extract)
+        
+    return wm_extract
     
     
-""" Image_path = './pictures/4.jpg'
-Text = 'hello world'
-len_wm, outputPath = embed_text(Image_path, Text)
-get_text(outputPath, len_wm) """
+# Image_path = 'C:\\Users\\27476\\Pictures\\20231205215257.png'
+# output_path = 'C:\\Users\\27476\\Desktop\\encryptTools\\pythonProject1\\output'
+# Text = 'hello world'
+# len_wm, outputPath = embed_text(Image_path, Text,output_path)
+# get_text(outputPath, len_wm)
 
 def embed_img(img_path, wm_path):
     bwm1 = WaterMark(password_wm=1, password_img=1)

@@ -29,6 +29,9 @@ def convert_to_bytes(data):
         return bytes.fromhex(data)
     else:
         raise TypeError('Unsupported data type')
+    
+def convert_slashes(file_path):
+    return file_path.replace('\\', '/')
 
 
 

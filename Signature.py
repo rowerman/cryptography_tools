@@ -101,13 +101,14 @@ def poly1305_en(message):
     return base64.b64encode(tag).decode(), key
 
 def poly1305_de(message, key, tag):
+    key = key.encode()
     p = poly1305.Poly1305(key)
     p.update(message.encode())
     try:
         p.verify(base64.b64decode(tag.encode()))
-        return "The PolyTag is correct~"
+        return True
     except:
-        return "The PolyTag is incorrect!"
+        return False
     
 """ message = "Hello, world! I 'm Ed448."
 MacGenerated, key = poly1305_en(message)
@@ -129,21 +130,23 @@ def SHA_family(message, type_sha):
     }
 
     if type_sha in sha_types:
-        sha = sha_types[type_sha]()
-        sha.update(message.encode())
-        return base64.b64encode(sha.finalize()).decode()
+        digest = hashes.Hash(sha_types[type_sha](), backend=default_backend())
+        digest.update(message.encode())
+        return base64.b64encode(digest.finalize()).decode()
     else:
         raise ValueError(f"Invalid SHA type: {type_sha}")
     
-def Shake_family(len_output,type_shake):
+def Shake_family(message, len_output, type_shake):
+    len_output = int(len_output)
     if len_output < 128 or len_output > 8192:
         raise ValueError("The length of output must be between 128 and 8192 bits.")
+    message = message.encode()
     if type_shake == "SHAKE128":
-        tag = hashes.SHAKE128(len_output)
+        digest = hashes.Hash(hashes.SHAKE128(len_output), backend=default_backend())
     elif type_shake == "SHAKE256":
-        tag = hashes.SHAKE128(len_output)
+        digest = hashes.Hash(hashes.SHAKE256(len_output), backend=default_backend())
     else :
         raise ValueError("Invalid SHAKE type.")
-    
-    return base64.b64encode(tag.finalize()).decode()
+    digest.update(message)
+    return base64.b64encode(digest.finalize()).decode()
     
